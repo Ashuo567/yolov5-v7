@@ -79,6 +79,7 @@ build/
 develop-eggs/
 dist/
 downloads/
+weights/
 eggs/
 .eggs/
 lib/
