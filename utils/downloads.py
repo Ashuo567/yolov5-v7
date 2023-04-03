@@ -85,6 +85,7 @@ def attempt_download(file, repo='ultralytics/yolov5', release='v7.0'):
 
         # GitHub assets
         assets = [f'yolov5{size}{suffix}.pt' for size in 'nsmlx' for suffix in ('', '6', '-cls', '-seg')]  # default
+        """
         try:
             tag, assets = github_assets(repo, release)
         except Exception:
@@ -95,7 +96,7 @@ def attempt_download(file, repo='ultralytics/yolov5', release='v7.0'):
                     tag = subprocess.check_output('git tag', shell=True, stderr=subprocess.STDOUT).decode().split()[-1]
                 except Exception:
                     tag = release
-
+        """
         file.parent.mkdir(parents=True, exist_ok=True)  # make parent dir (if required)
         if name in assets:
             url3 = 'https://drive.google.com/drive/folders/1EFQTEUeXWSFww0luse2jB9M1QNZQGwNl'  # backup gdrive mirror
